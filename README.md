@@ -100,3 +100,12 @@ $ npm install lodash
 [GitHub Package Registry を npm で使う - Qiita](https://qiita.com/nall/items/5e94f37288c3e796a85e)
 
 [GitHub Packages でパッケージを公開する](https://aggre.io/post/publish-package-with-github-packages)
+
+## 🍟 Author
+
+- [github/hisasann](https://github.com/hisasann)
+- [twitter/hisasann](https://twitter.com/hisasann)
+
+## 🥫 License
+
+MIT © [hisasann (Yoshiyuki Hisamatsu)](https://github.com/hisasann)

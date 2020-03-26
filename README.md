@@ -95,6 +95,33 @@ $ npm install @hisasann/hello-world-github-packages@0.0.1
 $ npm install lodash
 ```
 
+## Github Actions経由でnpm publishする
+
+```yaml
+name: Node.js Package
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    name: Github Packages Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # GitHub Packagesへの公開のために.npmrcファイルをセットアップ
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@hisasann' # Defaults to the user or organization that owns the workflow file
+      - run: npm install
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+via [Node.jsパッケージの公開 - GitHub ヘルプ](https://help.github.com/ja/actions/language-and-framework-guides/publishing-nodejs-packages)
+
 ## 参考記事
 
 [GitHub Package Registry を npm で使う - Qiita](https://qiita.com/nall/items/5e94f37288c3e796a85e)

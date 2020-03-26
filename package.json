@@ -1,6 +1,6 @@
 {
   "name": "@hisasann/hello-world-github-packages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
